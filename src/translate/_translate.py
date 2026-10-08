@@ -1,13 +1,13 @@
 from typing import Literal
 
-LOWERCASE_VOWELS: Literal["aeiou"] = "aeiou"
+LOWERCASE_VOWELS: Literal["aeiouy"] = "aeiouy"
 
 
 def _translate_word_to_pig_latin(word: str) -> str:
     if not len(word):
         return word
     if word[0].lower() in LOWERCASE_VOWELS:
-        return word + "-hay"
+        return word + "-way"
     for i, letter in enumerate(word):
         if letter.lower() in LOWERCASE_VOWELS:
             is_capital: bool = word.istitle()
@@ -44,5 +44,7 @@ def translate_to_pig_latin(message: str) -> str:
         else:
             flush_word()
             translated_message.append(char)
+
+    flush_word()
 
     return "".join(translated_message)
