@@ -4,7 +4,7 @@ from translate import translate_to_pig_latin
 
 
 @pytest.mark.parametrize(
-    "message, expected",
+    ("message", "expected"),
     [
         ("hello", "ello-hay"),
         ("apple", "apple-way"),
