@@ -44,4 +44,25 @@ class Translator:
         Returns:
             str: The translated message in Pig Latin.
         """
-        return message
+        tokens: list[str] = self._tokenize(message)
+        pig_latin: list[str] = []
+
+        for token in tokens:
+            if token.isalnum():
+                if token[0] in "aeiou":
+                    pig_latin.append(token + "-way")
+                else:
+                    for i, letter in enumerate(token):
+                        if letter.lower() in "aeiou":
+                            is_capital: bool = token.istitle()
+                            result: str = f"{token[i:]}-{token[:i].lower()}ay"
+
+                            if is_capital:
+                                result = result.capitalize()
+
+                            pig_latin.append(result)
+                            break
+            else:
+                pig_latin.append(token)
+
+        return "".join(pig_latin)
