@@ -1,6 +1,4 @@
-from typing import Literal
-
-LOWERCASE_VOWELS: Literal["aeiouy"] = "aeiouy"
+LOWERCASE_VOWELS: frozenset[str] = frozenset("aeiouy")
 
 
 def _translate_word_to_pig_latin(word: str) -> str:
