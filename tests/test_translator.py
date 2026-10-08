@@ -8,6 +8,7 @@ from translate import translate_to_pig_latin
     [
         ("hello", "ello-hay"),
         ("apple", "apple-way"),
+        ("queen", "een-quay"),
         ("string", "ing-stray"),
         ("", ""),
         ("a", "a-way"),
