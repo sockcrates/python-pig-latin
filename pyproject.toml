@@ -29,6 +29,7 @@ line-length = 88
 indent-width = 4
 
 [tool.ruff.lint]
+ignore = ["CPY001"]
 select = ["ALL"]
 
 external = []
@@ -38,6 +39,9 @@ unfixable = ["ERA001"]
 allow-star-arg-any = false
 ignore-fully-untyped = false
 suppress-none-returning = false
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["D100", "D103", "INP001", "S101"]
 
 [tool.ruff.lint.flake8-type-checking]
 strict = true
