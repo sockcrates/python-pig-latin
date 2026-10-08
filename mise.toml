@@ -1,0 +1,38 @@
+[tools]
+python = "3.14.8"
+uv = "0.12.23"
+
+[settings]
+python.uv_venv_auto = "source"
+
+[tasks.install]
+description = "Install dependencies"
+run = "uv sync --frozen"
+
+[tasks.lint]
+description = "Lint Python code"
+run = "uv run ruff check ."
+
+[tasks.format]
+description = "Format Python code"
+run = "uv run ruff format ."
+
+[tasks.typecheck]
+description = "Type-check Python code"
+run = "uv run ty check"
+
+[tasks.test]
+description = "Run tests"
+run = "uv run pytest"
+
+[tasks.check]
+description = "Run all static checks"
+run = [
+    "uv run ruff check .",
+    "uv run ruff format --check .",
+    "uv run ty check",
+]
+
+[tasks.ci]
+description = "Run all CI checks"
+depends = ["check", "test"]
