@@ -12,6 +12,8 @@ from translate import translate_to_pig_latin
         ("string", "ing-stray"),
         ("", ""),
         ("a", "a-way"),
+        ("123", "123"),
+        ("       , . !,   ,.", "       , . !,   ,."),
         ("I am testing", "I-way am-way esting-tay"),
         ("Python is fun", "Ython-pay is-way un-fay"),
         ("Hello, world!", "Ello-hay, orld-way!"),
